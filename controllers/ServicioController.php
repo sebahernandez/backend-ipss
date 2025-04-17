@@ -4,8 +4,8 @@ require_once './models/Servicio.php';
 class ServicioController {
     private $servicio;
 
-    public function __construct($db) {
-        $this->servicio = new Servicio($db);
+    public function __construct($db, $useFakeData = false) {
+        $this->servicio = new Servicio($db, $useFakeData);
     }
 
     public function obtenerServicios() {

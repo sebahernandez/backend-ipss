@@ -1,12 +1,21 @@
 <?php
 class Servicio {
     private $conn;
+    private $useFakeData;
 
-    public function __construct($db) {
+    public function __construct($db, $useFakeData = false) {
         $this->conn = $db;
+        $this->useFakeData = $useFakeData;
     }
 
     public function obtenerServicios() {
+        // Si se seleccionó usar datos falsos, devolver datos hardcoded
+        if ($this->useFakeData) {
+            require_once './config/fake_data.php';
+            return FakeData::getServicios();
+        }
+
+        // De lo contrario, usar la base de datos real
         $query = "SELECT id, nombre_es, nombre_en, descripcion_es, descripcion_en FROM servicios";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
