@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuestros Servicios - IPSS Soluciones Digitales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="text-xl font-bold">IPSS Soluciones</div>
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html#home" class="hover:text-blue-200 transition"
+            >Home</a
+          >
+          <a
+            href="servicios.html"
+            class="hover:text-blue-200 transition font-bold border-b-2 border-white"
+            >Nuestros Servicios</a
+          >
+          <a href="contacto.html" class="hover:text-blue-200 transition"
+            >Contáctenos</a
+          >
+          <a href="nosotros.html" class="hover:text-blue-200 transition"
+            >Nosotros</a
+          >
+        </div>
+        <!-- Menú móvil -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </nav>
+      <!-- Menú móvil desplegable -->
+      <div id="mobile-menu" class="md:hidden hidden bg-blue-700 pb-4 px-4">
+        <a
+          href="index.html#home"
+          class="block py-2 hover:text-blue-200 transition"
+          >Home</a
+        >
+        <a
+          href="servicios.html"
+          class="block py-2 hover:text-blue-200 transition font-bold"
+          >Nuestros Servicios</a
+        >
+        <a
+          href="contacto.html"
+          class="block py-2 hover:text-blue-200 transition"
+          >Contáctenos</a
+        >
+        <a
+          href="nosotros.html"
+          class="block py-2 hover:text-blue-200 transition"
+          >Nosotros</a
+        >
+      </div>
+    </header>
+    <div class="bg-blue-600 py-16 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">Nuestros Servicios</h1>
+        <p class="text-xl">
+          Soluciones digitales diseñadas para impulsar su negocio
+        </p>
+      </div>
+    </div>
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div id="loading-services" class="text-center py-12">
+          <div
+            class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"
+          ></div>
+          <p class="mt-4 text-gray-600">Cargando servicios...</p>
+        </div>
+
+        <div id="error-services" class="hidden text-center py-12">
+          <div
+            class="inline-block rounded-full h-16 w-16 bg-red-100 flex items-center justify-center mb-4"
+          >
+            <i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i>
+          </div>
+          <p class="text-gray-800 font-bold">
+            No se pudieron cargar los servicios
+          </p>
+          <p class="mt-2 text-gray-600">
+            Por favor, intente recargar la página o contacte con nosotros.
+          </p>
+        </div>
+
+        <div id="services-container" class="hidden"></div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-blue-50">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">
+          ¿Listo para transformar su negocio?
+        </h2>
+        <p class="text-xl mb-8 text-gray-600 max-w-3xl mx-auto">
+          Contacte con nosotros para una consulta personalizada y descubra cómo
+          podemos ayudarle a alcanzar sus objetivos digitales.
+        </p>
+        <a
+          href="contacto.html"
+          class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
+          >Contáctenos ahora</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p class="font-bold text-xl">IPSS Soluciones</p>
+            <p class="text-gray-400">Transformando el futuro digital</p>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+        <div class="mt-6 text-center text-gray-400 text-sm">
+          <p>&copy; 2025 IPSS Soluciones. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      document
+        .getElementById("menu-btn")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      function cargarDatos() {
+        const headerParams = { Authorization: "Bearer ipss2025" };
+        const apiUrl =
+          "http://localhost:8888/ipss/backend/servicios.php?fake=true";
+        $.ajax({
+          url: apiUrl,
+          type: "GET",
+          dataType: "json",
+          headers: headerParams,
+          success: function (json) {
+            console.log(json.data);
+            $("#services-container").empty();
+
+            if (json.data && json.data.length > 0) {
+              // Creamos un contenedor de grid para las cards
+              let gridContainer =
+                '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">';
+
+              for (let i = 0; i < json.data.length; i++) {
+                // Creamos una card para cada servicio
+                let card = `
+                  <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="p-6">
+                      <div class="flex items-center justify-center mb-4">
+                        <div class="rounded-full bg-blue-100 p-3">
+                          <i class="fas fa-${getIconForService(
+                            i
+                          )} text-blue-600 text-xl"></i>
+                        </div>
+                      </div>
+                      <h3 class="text-xl font-bold text-center text-gray-800 mb-3">${
+                        json.data[i].nombre.es
+                      }</h3>
+                      <p class="text-gray-600 text-center">${
+                        json.data[i].descripcion.es
+                      }</p>
+                      <div class="mt-4 text-center">
+                        <a href="#" class="text-blue-600 hover:underline font-semibold inline-flex items-center">
+                          Saber más <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                `;
+
+                gridContainer += card;
+              }
+
+              gridContainer += "</div>";
+              $("#services-container").append(gridContainer);
+            } else {
+              $("#services-container").html(
+                '<p class="text-center text-gray-600">No se encontraron servicios disponibles.</p>'
+              );
+            }
+
+            $("#loading-services").addClass("hidden");
+            $("#services-container").removeClass("hidden");
+          },
+          error: function (xhr, status, error) {
+            console.error("Error al cargar los datos: " + error);
+            $("#loading-services").addClass("hidden");
+            $("#error-services").removeClass("hidden");
+          },
+        });
+      }
+
+      // Función para asignar un icono según el índice del servicio
+      function getIconForService(index) {
+        const icons = [
+          "code",
+          "mobile-alt",
+          "cogs",
+          "chart-line",
+          "server",
+          "shield-alt",
+          "database",
+          "globe",
+        ];
+        return icons[index % icons.length];
+      }
+
+      $(document).ready(function () {
+        cargarDatos();
+      });
+    </script>
+  </body>
+</html>

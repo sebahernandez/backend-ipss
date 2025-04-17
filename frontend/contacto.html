@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contáctenos - IPSS Soluciones Digitales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="text-xl font-bold">IPSS Soluciones</div>
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html#home" class="hover:text-blue-200 transition"
+            >Home</a
+          >
+          <a href="servicios.html" class="hover:text-blue-200 transition"
+            >Nuestros Servicios</a
+          >
+          <a
+            href="contacto.html"
+            class="hover:text-blue-200 transition font-bold border-b-2 border-white"
+            >Contáctenos</a
+          >
+          <a href="nosotros.html" class="hover:text-blue-200 transition"
+            >Nosotros</a
+          >
+        </div>
+        <!-- Menú móvil -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </nav>
+      <!-- Menú móvil desplegable -->
+      <div id="mobile-menu" class="md:hidden hidden bg-blue-700 pb-4 px-4">
+        <a
+          href="index.html#home"
+          class="block py-2 hover:text-blue-200 transition"
+          >Home</a
+        >
+        <a
+          href="servicios.html"
+          class="block py-2 hover:text-blue-200 transition"
+          >Nuestros Servicios</a
+        >
+        <a
+          href="contacto.html"
+          class="block py-2 hover:text-blue-200 transition font-bold"
+          >Contáctenos</a
+        >
+        <a
+          href="nosotros.html"
+          class="block py-2 hover:text-blue-200 transition"
+          >Nosotros</a
+        >
+      </div>
+    </header>
+
+    <!-- Banner de Contacto -->
+    <div class="bg-blue-600 py-16 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">Contáctenos</h1>
+        <p class="text-xl">
+          Estamos aquí para ayudarle a impulsar su transformación digital
+        </p>
+      </div>
+    </div>
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex flex-col md:flex-row gap-12">
+            <div class="w-full md:w-2/3">
+              <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">
+                  Envíenos un mensaje
+                </h2>
+                <form id="contactForm" class="space-y-6">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        for="nombre"
+                        class="block text-gray-700 font-medium mb-2"
+                        >Nombre completo</label
+                      >
+                      <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required
+                      />
+                      <p
+                        id="nombreError"
+                        class="text-red-500 text-sm mt-1 hidden"
+                      >
+                        Por favor, ingrese su nombre completo.
+                      </p>
+                    </div>
+                    <div>
+                      <label
+                        for="email"
+                        class="block text-gray-700 font-medium mb-2"
+                        >Correo electrónico</label
+                      >
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required
+                      />
+                      <p
+                        id="emailError"
+                        class="text-red-500 text-sm mt-1 hidden"
+                      >
+                        Por favor, ingrese un correo electrónico válido.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      for="empresa"
+                      class="block text-gray-700 font-medium mb-2"
+                      >Empresa</label
+                    >
+                    <input
+                      type="text"
+                      id="empresa"
+                      name="empresa"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="telefono"
+                      class="block text-gray-700 font-medium mb-2"
+                      >Teléfono</label
+                    >
+                    <input
+                      type="tel"
+                      id="telefono"
+                      name="telefono"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      for="servicio"
+                      class="block text-gray-700 font-medium mb-2"
+                      >Servicio de interés</label
+                    >
+                    <select
+                      id="servicio"
+                      name="servicio"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      required
+                    >
+                      <option value="">Seleccione un servicio</option>
+                      <option value="consultoria">Consultoría Digital</option>
+                      <option value="multiexperiencia">
+                        Soluciones Multiexperiencia
+                      </option>
+                      <option value="ecosistemas">
+                        Evolución de Ecosistemas
+                      </option>
+                      <option value="lowcode">Soluciones Low-Code</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                    <p
+                      id="servicioError"
+                      class="text-red-500 text-sm mt-1 hidden"
+                    >
+                      Por favor, seleccione un servicio.
+                    </p>
+                  </div>
+
+                  <div>
+                    <label
+                      for="mensaje"
+                      class="block text-gray-700 font-medium mb-2"
+                      >Mensaje</label
+                    >
+                    <textarea
+                      id="mensaje"
+                      name="mensaje"
+                      rows="5"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      required
+                    ></textarea>
+                    <p
+                      id="mensajeError"
+                      class="text-red-500 text-sm mt-1 hidden"
+                    >
+                      Por favor, ingrese su mensaje.
+                    </p>
+                  </div>
+
+                  <div class="flex items-center">
+                    <input
+                      type="checkbox"
+                      id="politica"
+                      name="politica"
+                      class="mr-2"
+                      required
+                    />
+                    <label for="politica" class="text-gray-700 text-sm"
+                      >He leído y acepto la
+                      <a href="#" class="text-blue-600 hover:underline"
+                        >política de privacidad</a
+                      >.</label
+                    >
+                    <p
+                      id="politicaError"
+                      class="text-red-500 text-sm ml-2 hidden"
+                    >
+                      Debe aceptar la política de privacidad.
+                    </p>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300"
+                  >
+                    Enviar Mensaje
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div class="w-full md:w-1/3">
+              <div class="p-8 h-full">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">
+                  Información de contacto
+                </h2>
+
+                <div class="space-y-6">
+                  <div class="flex items-start">
+                    <div class="mr-4">
+                      <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-gray-800">
+                        Correo Electrónico
+                      </h3>
+                      <p class="text-gray-600">info@ipss-soluciones.com</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start">
+                    <div class="mr-4">
+                      <i class="fas fa-phone-alt text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-gray-800">Teléfono</h3>
+                      <p class="text-gray-600">+56 2 2123 4567</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start">
+                    <div class="mr-4">
+                      <i
+                        class="fas fa-map-marker-alt text-blue-600 text-xl"
+                      ></i>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-gray-800">Oficina Principal</h3>
+                      <p class="text-gray-600">
+                        Av. Apoquindo 4700<br />Las Condes, Santiago<br />Chile
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start">
+                    <div class="mr-4">
+                      <i class="fas fa-clock text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-gray-800">
+                        Horario de Atención
+                      </h3>
+                      <p class="text-gray-600">
+                        Lunes - Viernes<br />09:00 - 18:00
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8">
+                  <h3 class="font-bold text-gray-800 mb-4">
+                    Síguenos en redes sociales
+                  </h3>
+                  <div class="flex space-x-4">
+                    <a
+                      href="#"
+                      class="text-blue-600 hover:text-blue-800 transition"
+                    >
+                      <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="text-blue-600 hover:text-blue-800 transition"
+                    >
+                      <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="text-blue-600 hover:text-blue-800 transition"
+                    >
+                      <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="text-blue-600 hover:text-blue-800 transition"
+                    >
+                      <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p class="font-bold text-xl">IPSS Soluciones</p>
+            <p class="text-gray-400">Transformando el futuro digital</p>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+        <div class="mt-6 text-center text-gray-400 text-sm">
+          <p>&copy; 2025 IPSS Soluciones. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document
+        .getElementById("menu-btn")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document
+            .querySelectorAll(".text-red-500")
+            .forEach((el) => el.classList.add("hidden"));
+
+          // Get form values
+          const nombre = document.getElementById("nombre").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const servicio = document.getElementById("servicio").value;
+          const mensaje = document.getElementById("mensaje").value.trim();
+          const politica = document.getElementById("politica").checked;
+
+          let isValid = true;
+
+          if (nombre === "") {
+            document.getElementById("nombreError").classList.remove("hidden");
+            isValid = false;
+          }
+          if (email === "" || !isValidEmail(email)) {
+            document.getElementById("emailError").classList.remove("hidden");
+            isValid = false;
+          }
+          if (servicio === "") {
+            document.getElementById("servicioError").classList.remove("hidden");
+            isValid = false;
+          }
+          if (mensaje === "") {
+            document.getElementById("mensajeError").classList.remove("hidden");
+            isValid = false;
+          }
+          if (!politica) {
+            document.getElementById("politicaError").classList.remove("hidden");
+            isValid = false;
+          }
+          if (isValid) {
+            const formData = {
+              nombre,
+              email,
+              empresa: document.getElementById("empresa").value.trim(),
+              telefono: document.getElementById("telefono").value.trim(),
+              servicio,
+              mensaje,
+            };
+            console.log("Datos del formulario:", formData);
+            this.reset();
+            alert(
+              "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto."
+            );
+          }
+        });
+
+      function isValidEmail(email) {
+        const re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+    </script>
+  </body>
+</html>

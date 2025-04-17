@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPSS Soluciones Digitales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="text-xl font-bold">IPSS Soluciones</div>
+        <div class="hidden md:flex space-x-6">
+          <a href="#home" class="hover:text-blue-200 transition">Home</a>
+          <a href="servicios.html" class="hover:text-blue-200 transition"
+            >Nuestros Servicios</a
+          >
+          <a href="contacto.html" class="hover:text-blue-200 transition"
+            >Contáctenos</a
+          >
+          <a href="nosotros.html" class="hover:text-blue-200 transition"
+            >Nosotros</a
+          >
+        </div>
+        <!-- Menú móvil -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </nav>
+      <div id="mobile-menu" class="md:hidden hidden bg-blue-700 pb-4 px-4">
+        <a href="#home" class="block py-2 hover:text-blue-200 transition"
+          >Home</a
+        >
+        <a
+          href="servicios.html"
+          class="block py-2 hover:text-blue-200 transition"
+          >Nuestros Servicios</a
+        >
+        <a
+          href="contacto.html"
+          class="block py-2 hover:text-blue-200 transition"
+          >Contáctenos</a
+        >
+        <a
+          href="nosotros.html"
+          class="block py-2 hover:text-blue-200 transition"
+          >Nosotros</a
+        >
+      </div>
+    </header>
+
+    <!-- Sección Hero - Home -->
+    <section
+      id="home"
+      class="py-20 bg-gradient-to-br from-blue-500 to-blue-700 text-white"
+    >
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Transformamos Ideas en Soluciones Digitales
+          </h1>
+          <p class="text-xl mb-8">
+            Somos expertos en desarrollar soluciones tecnológicas innovadoras
+            para impulsar tu negocio en la era digital.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="servicios.html"
+              class="bg-white text-blue-600 font-bold py-2 px-6 rounded-full shadow-lg hover:bg-blue-50 transition duration-300"
+              >Explorar Servicios</a
+            >
+            <a
+              href="contacto.html"
+              class="bg-transparent border-2 border-white text-white font-bold py-2 px-6 rounded-full hover:bg-white hover:text-blue-600 transition duration-300"
+              >Contáctanos</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Descripción Breve -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+            IPSS Soluciones Digitales
+          </h2>
+          <p class="text-lg text-gray-600 text-center mb-6">
+            En IPSS Soluciones nos especializamos en potenciar el crecimiento de
+            tu empresa a través de la transformación digital. Ofrecemos
+            servicios de consultoría digital, desarrollo de soluciones
+            multiexperiencia, evolución de ecosistemas tecnológicos y soluciones
+            low-code.
+          </p>
+          <p class="text-lg text-gray-600 text-center mb-8">
+            Nuestro equipo de profesionales expertos trabaja con el compromiso
+            de entregar soluciones de alta calidad que respondan a las
+            necesidades específicas de tu negocio, acompañándote en cada etapa
+            del proceso de transformación digital.
+          </p>
+          <div class="flex justify-center gap-4">
+            <a
+              href="nosotros.html"
+              class="text-blue-600 font-medium hover:underline"
+              >Conoce más sobre nosotros</a
+            >
+            <span class="text-gray-400">|</span>
+            <a
+              href="servicios.html"
+              class="text-blue-600 font-medium hover:underline"
+              >Descubre nuestros servicios</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p class="font-bold text-xl">IPSS Soluciones</p>
+            <p class="text-gray-400">Transformando el futuro digital</p>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+        <div class="mt-6 text-center text-gray-400 text-sm">
+          <p>&copy; 2025 IPSS Soluciones. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Menú móvil toggle
+      document
+        .getElementById("menu-btn")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>

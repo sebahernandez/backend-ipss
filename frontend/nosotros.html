@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nosotros - IPSS Soluciones Digitales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <!-- Header y menú de navegación -->
+    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="text-xl font-bold">IPSS Soluciones</div>
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html#home" class="hover:text-blue-200 transition"
+            >Home</a
+          >
+          <a href="servicios.html" class="hover:text-blue-200 transition"
+            >Nuestros Servicios</a
+          >
+          <a href="contacto.html" class="hover:text-blue-200 transition"
+            >Contáctenos</a
+          >
+          <a
+            href="nosotros.html"
+            class="hover:text-blue-200 transition font-bold border-b-2 border-white"
+            >Nosotros</a
+          >
+        </div>
+        <!-- Menú móvil -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </nav>
+      <!-- Menú móvil desplegable -->
+      <div id="mobile-menu" class="md:hidden hidden bg-blue-700 pb-4 px-4">
+        <a
+          href="index.html#home"
+          class="block py-2 hover:text-blue-200 transition"
+          >Home</a
+        >
+        <a
+          href="servicios.html"
+          class="block py-2 hover:text-blue-200 transition"
+          >Nuestros Servicios</a
+        >
+        <a
+          href="contacto.html"
+          class="block py-2 hover:text-blue-200 transition"
+          >Contáctenos</a
+        >
+        <a
+          href="nosotros.html"
+          class="block py-2 hover:text-blue-200 transition font-bold"
+          >Nosotros</a
+        >
+      </div>
+    </header>
+    <div class="bg-blue-600 py-16 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">Nosotros</h1>
+        <p class="text-xl">Conozca nuestra historia, misión y valores</p>
+      </div>
+    </div>
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div id="loading-about" class="text-center py-12">
+          <div
+            class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"
+          ></div>
+          <p class="mt-4 text-gray-600">Cargando información...</p>
+        </div>
+
+        <div id="error-about" class="hidden text-center py-12">
+          <div
+            class="inline-block rounded-full h-16 w-16 bg-red-100 flex items-center justify-center mb-4"
+          >
+            <i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i>
+          </div>
+          <p class="text-gray-800 font-bold">
+            No se pudo cargar la información
+          </p>
+          <p class="mt-2 text-gray-600">
+            Por favor, intente recargar la página o contacte con nosotros.
+          </p>
+        </div>
+        <div id="about-container" class="hidden"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p class="font-bold text-xl">IPSS Soluciones</p>
+            <p class="text-gray-400">Transformando el futuro digital</p>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="hover:text-blue-400 transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+        <div class="mt-6 text-center text-gray-400 text-sm">
+          <p>&copy; 2025 IPSS Soluciones. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      document
+        .getElementById("menu-btn")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      function cargarDatos() {
+        // Contenido estático para la sección Nosotros
+        const aboutContainer = $("#about-container");
+
+        // Crear estructura HTML para mostrar la información estática
+        let html = '<div class="max-w-5xl mx-auto mb-20">';
+
+        // Historia
+        html += `
+          <div class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Nuestra Historia</h2>
+            <p class="text-gray-600 mb-4">
+              IPSS Soluciones Digitales fue fundada en 2015 con la visión de transformar la manera en que las empresas
+              interactúan con la tecnología. Comenzamos como un pequeño equipo de tres desarrolladores apasionados
+              por la innovación tecnológica, y hoy hemos crecido hasta convertirnos en un referente en el sector de
+              soluciones digitales para empresas de todos los tamaños.
+            </p>
+            <p class="text-gray-600">
+              A lo largo de nuestra trayectoria, hemos ayudado a más de 200 empresas a modernizar sus operaciones,
+              mejorar su presencia digital y optimizar sus procesos internos mediante soluciones tecnológicas a medida.
+            </p>
+          </div>`;
+
+        // Misión
+        html += `
+          <section class="py-8">
+            <div class="container mx-auto px-4">
+              <h2 class="text-3xl font-bold mb-6 text-gray-800">Nuestra Misión</h2>
+              <p class="text-gray-600">
+                En IPSS Soluciones Digitales, nuestra misión es potenciar el crecimiento y la eficiencia de nuestros clientes 
+                a través de soluciones tecnológicas innovadoras y personalizadas. Nos comprometemos a ofrecer servicios 
+                de la más alta calidad, combinando nuestra experiencia técnica con un profundo entendimiento de las 
+                necesidades específicas de cada negocio para crear valor real y medible.
+              </p>
+            </div>
+          </section>`;
+
+        // Valores
+        html += `
+          <section class="py-8">
+            <div class="container mx-auto px-4">
+              <h2 class="text-3xl font-bold mb-6 text-gray-800">Nuestros Valores</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <div class="flex items-center justify-center mb-4">
+                    <div class="rounded-full bg-blue-100 p-3">
+                      <i class="fas fa-lightbulb text-blue-600 text-xl"></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-center text-gray-800 mb-3">Innovación</h3>
+                  <p class="text-gray-600 text-center">Buscamos constantemente nuevas formas de resolver problemas y mejorar nuestras soluciones.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <div class="flex items-center justify-center mb-4">
+                    <div class="rounded-full bg-blue-100 p-3">
+                      <i class="fas fa-users text-blue-600 text-xl"></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-center text-gray-800 mb-3">Colaboración</h3>
+                  <p class="text-gray-600 text-center">Trabajamos estrechamente con nuestros clientes, convirtiéndonos en socios de su éxito.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <div class="flex items-center justify-center mb-4">
+                    <div class="rounded-full bg-blue-100 p-3">
+                      <i class="fas fa-shield-alt text-blue-600 text-xl"></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-center text-gray-800 mb-3">Integridad</h3>
+                  <p class="text-gray-600 text-center">Actuamos con honestidad y transparencia en todo lo que hacemos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <div class="flex items-center justify-center mb-4">
+                    <div class="rounded-full bg-blue-100 p-3">
+                      <i class="fas fa-award text-blue-600 text-xl"></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-center text-gray-800 mb-3">Excelencia</h3>
+                  <p class="text-gray-600 text-center">Nos esforzamos por ofrecer la máxima calidad en cada proyecto que abordamos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <div class="flex items-center justify-center mb-4">
+                    <div class="rounded-full bg-blue-100 p-3">
+                      <i class="fas fa-rocket text-blue-600 text-xl"></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-center text-gray-800 mb-3">Adaptabilidad</h3>
+                  <p class="text-gray-600 text-center">Evolucionamos constantemente para mantenernos a la vanguardia de las nuevas tecnologías.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <div class="flex items-center justify-center mb-4">
+                    <div class="rounded-full bg-blue-100 p-3">
+                      <i class="fas fa-handshake text-blue-600 text-xl"></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-center text-gray-800 mb-3">Compromiso</h3>
+                  <p class="text-gray-600 text-center">Nos dedicamos a cumplir nuestras promesas y superar las expectativas de nuestros clientes.</p>
+                </div>
+              </div>
+            </div>
+          </section>`;
+
+        // Equipo
+        html += `
+          <section class="py-8">
+            <div class="container mx-auto px-4">
+              <h2 class="text-3xl font-bold mb-6 text-gray-800">Nuestro Equipo</h2>
+              <p class="text-gray-600 mb-8">
+                Contamos con un equipo diverso de profesionales apasionados por la tecnología y la innovación. 
+                Nuestros expertos combinan sólidos conocimientos técnicos con una profunda comprensión de los 
+                desafíos empresariales.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                  <div class="w-32 h-32 rounded-full bg-gray-300 mx-auto mb-4 overflow-hidden">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Rodríguez" class="w-full h-full object-cover">
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800">Carlos Rodríguez</h3>
+                  <p class="text-blue-600 font-medium">Director Ejecutivo</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                  <div class="w-32 h-32 rounded-full bg-gray-300 mx-auto mb-4 overflow-hidden">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Martínez" class="w-full h-full object-cover">
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800">Ana Martínez</h3>
+                  <p class="text-blue-600 font-medium">Directora de Tecnología</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                  <div class="w-32 h-32 rounded-full bg-gray-300 mx-auto mb-4 overflow-hidden">
+                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Miguel Sánchez" class="w-full h-full object-cover">
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800">Miguel Sánchez</h3>
+                  <p class="text-blue-600 font-medium">Director de Operaciones</p>
+                </div>
+              </div>
+            </div>
+          </section>`;
+
+        html += "</div>";
+
+        // Mostrar el contenido estático
+        aboutContainer.html(html);
+        $("#loading-about").addClass("hidden");
+        $("#about-container").removeClass("hidden");
+      }
+
+      $(document).ready(function () {
+        cargarDatos();
+      });
+    </script>
+  </body>
+</html>
